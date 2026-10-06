@@ -1,29 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const sans = Plus_Jakarta_Sans({ variable: "--font-sans", subsets: ["latin"] });
+const display = Fraunces({ variable: "--font-display", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Morrow — Objects for moving through life",
-  description: "Thoughtfully made bags for wherever the day takes you.",
+  title: "Linasprint — Indkøbsposer & muleposer med logo",
+  description: "Indkøbsposer og muleposer med dit logo. Gratis vareprøver, gratis digital korrektur og levering fra 5 hverdage.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="da" className={`${sans.variable} ${display.variable} antialiased`}>
+      <body>{children}</body>
     </html>
   );
 }
